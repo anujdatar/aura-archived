@@ -182,19 +182,16 @@ body {
 
 // nav - toolbar
 // make navbar elements transparent
-#appBar,
-.v-toolbar .v-list,
-.v-toolbar .v-list-item {
+#appBar {
   background-color: transparent;
   padding: 0;
 }
 // make navbar buttons fit the entire box
-.v-toolbar .v-btn,
-.v-toolbar .v-btn:before {
+.v-toolbar .v-btn:not(.pill-btn),
+.v-toolbar .v-btn:before:not(.pill-btn) {
   min-height: 48px;
 }
 // navbar and sidebar link text styling
-.v-toolbar .v-list-item--link,
 .v-navigation-drawer .v-list-item--link {
   text-transform: uppercase;
   font-size: 0.9em;
@@ -205,30 +202,33 @@ body {
   background-color:rgba(202, 202, 202, 0.9);
 }
 // color of navbar links on activation
-.v-toolbar .v-list-item--active:before {
+.v-toolbar .v-btn--active:before {
   opacity: 1;
   border-bottom: 3px solid var(--v-primary-base);
   background-color: transparent;
 }
-.v-toolbar .v-list-item--active .v-btn__content,
-.v-navigation-drawer .v-list-item--active,
-.v-menu__content .v-list-item--active {
+.v-toolbar .v-btn--active,
+.v-navigation-drawer .v-list-item--active {
   color: var(--v-primary-base);
 }
 // navbar links hover event
-.v-toolbar .v-list-item:hover,
-.v-navigation-drawer .v-list-item--link:hover,
-.v-menu__content .v-list-item--link:hover {
+.v-toolbar .v-btn:hover,
+.v-navigation-drawer .v-list-item--link:hover {
   background-color: var(--v-primary-base);
 }
 .v-toolbar .v-btn:hover .v-btn__content,
-.v-navigation-drawer .v-list-item:hover .v-list-item__content,
-.v-menu__content .v-list a:hover {
+.v-navigation-drawer .v-list-item:hover .v-list-item__content {
   color: white;
 }
 
-.v-menu__content .v-list-item--link:hover {
-  color: white;
+.v-toolbar .v-btn.pill-btn {
+  max-height: 36px;
+  border-radius: 24px;
 }
-
+.v-toolbar .v-btn.pill-btn {
+  margin-left: 5px;
+}
+.v-navigation-drawer .v-btn.pill-btn {
+  border-radius: 52px;
+}
 </style>
