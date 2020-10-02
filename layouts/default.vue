@@ -84,7 +84,7 @@
       </v-toolbar-title>
       <v-spacer />
       <!-- navbar links -->
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items class="hidden-sm-and-down align-center justify-center">
         <v-switch
           v-model="$vuetify.theme.dark"
           hide-details
@@ -92,43 +92,24 @@
           dense
           class="align-center"
         />
-        <v-list
-          class="d-flex align-center justify-center"
+        <v-btn
+          v-for="(route, i) in routes"
+          :key="i"
+          :to="route.path"
+          text
+          tile
+          small
         >
-          <v-list-item
-            v-for="(route, i) in routes"
-            :key="i"
-            :to="route.path"
-            :ripple="false"
-          >
-            <v-menu v-if="route.menu" open-on-hover offset-y rounded="0">
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  text
-                  tile
-                  small
-                  v-on="on"
-                >
-                  {{ route.title }}
-                </v-btn>
-              </template>
-              <v-list>
-                <v-list-item
-                  v-for="(item, j) in route.submenu"
-                  :key="j"
-                  :to="item.path"
-                  router
-                  exact
-                >
-                  {{ item.title }}
-                </v-list-item>
-              </v-list>
-            </v-menu>
-            <v-btn v-else text tile small>
-              {{ route.title }}
-            </v-btn>
-          </v-list-item>
-        </v-list>
+          {{ route.title }}
+        </v-btn>
+        <v-btn
+          to="/contact"
+          color="primary"
+          class="pill-btn"
+          small
+        >
+          Contact Us
+        </v-btn>
       </v-toolbar-items>
       <!-- drawer open close button -->
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
