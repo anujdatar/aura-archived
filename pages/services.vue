@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Services Page</h1>
+    <h1>Products & Services Page</h1>
   </div>
 </template>
 
 <script>
 export default {
   head () {
-    return { title: 'Services' }
+    return { title: 'Products & Services' }
   }
 }
 </script>
