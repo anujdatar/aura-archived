@@ -147,8 +147,7 @@ export default {
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about' },
         { title: 'Capabilities', path: '/capabilities' },
-        { title: 'Products & Services', path: '/services' },
-        { title: 'Contact', path: '/contact' }
+        { title: 'Products & Services', path: '/services' }
       ]
     }
   }
