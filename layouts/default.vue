@@ -52,6 +52,17 @@
             {{ route.title }}
           </v-list-item-content>
         </v-list-item>
+        <v-list-item>
+          <v-btn
+            to="/contact"
+            color="primary"
+            class="pill-btn"
+            block
+            x-large
+          >
+            Contact Us
+          </v-btn>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <!-- navigation sidebar/drawer end -->
