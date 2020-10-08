@@ -22,11 +22,11 @@
             Services
           </nuxt-link>
         </ul>
-      </div>
-      <div class="cta">
-        <nuxt-link to="/contact" tag="button" class="btn pill small">
-          Contact Us
-        </nuxt-link>
+        <div class="cta">
+          <nuxt-link to="/contact" tag="button" class="btn pill small">
+            Contact Us
+          </nuxt-link>
+        </div>
       </div>
       <div class="fa-icon burger btn mobile" tabindex="0" />
     </header>
