@@ -29,6 +29,7 @@ li {
   padding: 0;
 }
 
+// media queries for window size
 @media screen and (max-width:768px) {
   .desktop {
     display: none !important;
@@ -178,6 +179,7 @@ li {
   }
 }
 
+// button element styling
 .btn {
   display: inline-block;
   text-align: center;
@@ -211,6 +213,7 @@ a.btn {
   }
 }
 
+// font-awesome icon element styling
 .fa-icon {
   display: grid;
   place-items: center;
@@ -231,6 +234,7 @@ a.btn {
   padding: 0.5em;
 }
 
+// menu burger styling -> font awesome bars icon
 .burger {
   margin-left: auto;
 }
