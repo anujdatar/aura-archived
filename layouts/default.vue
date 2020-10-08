@@ -74,7 +74,43 @@
 export default {
   data () {
     return {
-      appTitle: 'Aura'
+      appTitle: 'Aura',
+      routes: [
+        { title: 'Home', path: '/' },
+        { title: 'About', path: 'about' },
+        { title: 'Capabilities', path: 'capabilities' },
+        { title: 'Services', path: 'services' }
+      ],
+      drawer: false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+
+    const burger = window.document.querySelector('div.burger')
+    burger.addEventListener('click', () => {
+      this.openSideNav()
+    })
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    openSideNav () {
+      const sidebar = window.document.querySelector('aside.side-nav')
+      sidebar.classList.add('is-open')
+    },
+    closeSideNav () {
+      const sidebar = window.document.querySelector('aside.side-nav')
+      sidebar.classList.remove('is-open')
+    },
+    onScroll (e) {
+      const myNav = window.document.querySelector('header.navbar')
+      if (window.pageYOffset > 0) {
+        myNav.classList.add('is-scrolled')
+      } else {
+        myNav.classList.remove('is-scrolled')
+      }
     }
   }
 }
