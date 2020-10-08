@@ -9,17 +9,15 @@
       </nuxt-link>
       <div class="nav-links right desktop">
         <ul class="nav-links-list">
-          <nuxt-link to="/" tag="li" tabindex="0" class="nav-link">
-            Home
-          </nuxt-link>
-          <nuxt-link to="/about" tag="li" tabindex="0" class="nav-link">
-            About
-          </nuxt-link>
-          <nuxt-link to="/capabilities" tag="li" tabindex="0" class="nav-link">
-            Capabilities
-          </nuxt-link>
-          <nuxt-link to="/services" tag="li" tabindex="0" class="nav-link">
-            Services
+          <nuxt-link
+            v-for="(item, i) in routes"
+            :key="i"
+            :to="item.path"
+            tag="li"
+            tabindex="0"
+            class="nav-link"
+          >
+            {{ item.title }}
           </nuxt-link>
         </ul>
         <div class="cta">
