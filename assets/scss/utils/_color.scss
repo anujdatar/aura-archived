@@ -1,0 +1,51 @@
+// css class defs for colors
+// usage just add class="materialize-red" to html tag for bg color 
+// and "text-materialize-red" for text color
+@each $color_name, $color_value in $colors {
+  .#{$color_name} {
+    background-color: $color_value !important;
+  }
+  .text-#{$color_name} {
+    color: $color_value !important;
+  }
+}
+  
+// usage - add color: color("teal"); to css/scss
+// or background-color: color("teal");
+@function color($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  }
+  @warn "Unknown `#{$color}` in custom defined $colors";
+  @return null
+}
+
+// class defs for theme colors
+// usage just add class="primary" to html tag for bg color 
+// and "text-primary" for text color
+// classes reserved for text only "text-main" and "text-contrast"
+@each $color_name, $color_value in $theme {
+  @if $color_name == "text-main" {
+    .#{$color_name} {
+      color: $color_value !important;
+    }
+  }
+  @else if $color_name == "text-contrast" {
+    .#{$color_name} {
+      color: $color_value !important;
+    }
+  }
+  @else if $color_name == "text-heading" {
+    .#{$color_name} {
+      color: $color_value !important;
+    }
+  }
+  @else {
+    .#{$color_name} {
+      background-color: $color_value !important;
+    }
+    .text-#{$color_name} {
+      color: $color_value !important;
+    }
+  }
+}
