@@ -164,13 +164,6 @@ li {
         background: var(--accent, limegreen);
         opacity: 0;
       }
-      .nav-link.nuxt-link-exact-active {
-        color: var(--accent, limegreen);
-      }
-      .nav-link.nuxt-link-exact-active:hover,
-      .nav-link.nuxt-link-exact-active:focus {
-        color: white;
-      }
       .nav-link.nuxt-link-exact-active::after {
         opacity: 1;
       }
