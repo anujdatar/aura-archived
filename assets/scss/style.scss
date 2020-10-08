@@ -189,3 +189,44 @@ a.btn {
     padding: .625em 1.1em;
   }
 }
+
+.fa-icon {
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn.fa-icon {
+  background-color: transparent;
+  color: var(--secondary, black);
+  font-size: 1.25em;
+  padding: 0.5em;
+}
+
+.burger {
+  margin-left: auto;
+}
+
+.burger::before {
+  content: '\f0c9';
+}
+.burger:hover::after,
+.burger:focus::after {
+  content: '';
+  background-color: var(--secondary, black);
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 100vw;
+  z-index: -1;
+}
