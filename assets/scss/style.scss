@@ -255,3 +255,71 @@ a.btn {
   border-radius: 100vw;
   z-index: -1;
 }
+
+// side navigation drawer styling
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: -50px;
+  height: 100vh;
+  width: 0;
+  z-index: 2;
+  transition: 300ms;
+  background: var(--bg-contrast, white);
+
+  display: flex;
+  flex-direction: column;
+
+  &.is-open {
+    right: 0;
+    width: 50%;
+    overflow: hidden;
+  }
+
+  hr {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .brand {
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+    padding: .2em;
+    height: 50px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  
+    .logo {
+      width: 36px;
+    }
+    .app-title {
+      margin-left: 5px;
+      text-decoration: none;
+      color: var(--secondary);
+      font-family: serif;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+  }
+
+  .nav-link-list {
+    list-style: none;
+    height: 100%;
+  }
+  .nav-link {
+    display: flex;
+    text-align: center;
+    height: 5em;
+  }
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

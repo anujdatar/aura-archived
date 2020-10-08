@@ -30,14 +30,32 @@
     </header>
     <!-- top navigation bar end -->
     <!-- side nav start -->
-    <!-- <aside class="side-nav">
-      <div class="title">
-        <nuxt-link to="/" tag="div" class="brand">
-          <img src="~/assets/images/aura_logo.png" class="logo" alt="aura-logo">
-          <span class="app-title">{{ appTitle }}</span>
-        </nuxt-link>
+    <aside class="side-nav mobile mobile">
+      <nuxt-link to="/" tag="div" class="brand">
+        <img src="~/assets/images/aura_logo.png" class="logo" alt="aura-logo">
+        <span class="app-title">{{ appTitle }}</span>
+      </nuxt-link>
+      <hr style="color: var(--secondary);width: 100%">
+      <div class="nav-links">
+        <ul class="nav-links-list">
+          <nuxt-link
+            v-for="(item, i) in routes"
+            :key="i"
+            :to="item.path"
+            tag="li"
+            tabindex="0"
+            class="nav-link"
+          >
+            {{ item.title }}
+          </nuxt-link>
+        </ul>
+        <div class="cta">
+          <nuxt-link to="/contact" tag="button" class="btn pill">
+            Contact Us
+          </nuxt-link>
+        </div>
       </div>
-    </aside> -->
+    </aside>
     <!-- side nav drawer end -->
     <!--  -->
     <!-- main start -->
