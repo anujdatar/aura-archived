@@ -7,18 +7,18 @@
         <img src="~/assets/images/aura_logo.png" class="logo" alt="aura-logo">
         <span class="app-title">{{ appTitle }}</span>
       </nuxt-link>
-      <div class="nav-links right">
+      <div class="nav-links right desktop">
         <ul class="nav-links-list">
-          <nuxt-link to="/" tag="li" class="nav-link">
+          <nuxt-link to="/" tag="li" tabindex="0" class="nav-link">
             Home
           </nuxt-link>
-          <nuxt-link to="/about" tag="li" class="nav-link">
+          <nuxt-link to="/about" tag="li" tabindex="0" class="nav-link">
             About
           </nuxt-link>
-          <nuxt-link to="/capabilities" tag="li" class="nav-link">
+          <nuxt-link to="/capabilities" tag="li" tabindex="0" class="nav-link">
             Capabilities
           </nuxt-link>
-          <nuxt-link to="/services" tag="li" class="nav-link">
+          <nuxt-link to="/services" tag="li" tabindex="0" class="nav-link">
             Services
           </nuxt-link>
         </ul>
@@ -28,6 +28,7 @@
           Contact Us
         </nuxt-link>
       </div>
+      <div class="fa-icon burger btn mobile" tabindex="0" />
     </header>
     <!-- top navigation bar end -->
     <!-- side nav start -->
