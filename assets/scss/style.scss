@@ -115,7 +115,7 @@ li {
 
   .brand {
     cursor: pointer;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: bold;
     padding: .2em;
     display: flex;
@@ -150,7 +150,7 @@ li {
       justify-content: space-around;
 
       .nav-link {
-        font-size: .9em;
+        font-size: .9rem;
         font-weight: 700;
         padding: 0 .5em;
         // margin: 0 .1em;
@@ -230,7 +230,7 @@ a.btn {
 .btn.fa-icon {
   background-color: transparent;
   color: var(--secondary, black);
-  font-size: 1.25em;
+  font-size: 1.25rem;
   padding: 0.5em;
 }
 
@@ -283,7 +283,7 @@ a.btn {
   
   .brand {
     cursor: pointer;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: bold;
     padding: .2em;
     height: 50px;
