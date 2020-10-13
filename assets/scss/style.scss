@@ -260,19 +260,24 @@ a.btn {
 .side-nav {
   position: fixed;
   top: 0;
-  right: -50px;
+  right: -50%;
   height: 100vh;
   width: 0;
   z-index: 2;
-  transition: 300ms;
-  background: var(--bg-contrast, white);
+  transition: 500ms;
 
   display: flex;
   flex-direction: column;
 
+  .side-nav-links {
+    background: var(--bg-contrast, white);
+    width: 100%;
+  }
+
   &.is-open {
+    padding-left: 50%;
+    width: 100%;
     right: 0;
-    width: 50%;
     overflow: hidden;
   }
 
