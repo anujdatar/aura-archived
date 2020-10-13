@@ -87,15 +87,24 @@ export default {
     }
   },
   mounted () {
+    // handle scroll event for navigation bar
     window.addEventListener('scroll', this.onScroll)
 
+    // handle navigation drawer open
     const burger = window.document.querySelector('div.burger')
     burger.addEventListener('click', () => {
       this.openSideNav()
     })
+
+    // handle navigation drawer close
+    window.addEventListener('click', () => {
+      this.closeSideNav()
+    })
   },
   beforeDestroy () {
     window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('click', this.closeSideNav)
+    window.document.querySelector('div.burger').removeEventListener('click', this.openSideNav)
   },
   methods: {
     openSideNav () {
@@ -104,9 +113,13 @@ export default {
     },
     closeSideNav () {
       const sidebar = window.document.querySelector('aside.side-nav')
-      sidebar.classList.remove('is-open')
+      const linkNodeList = window.document.querySelectorAll('aside.side-nav .nuxt-link-active')
+      const linkArray = Array.prototype.slice.call(linkNodeList)
+      if ((event.target === sidebar) || (linkArray.includes(event.target))) {
+        sidebar.classList.remove('is-open')
+      }
     },
-    onScroll (e) {
+    onScroll () {
       const myNav = window.document.querySelector('header.navbar')
       if (window.pageYOffset > 0) {
         myNav.classList.add('is-scrolled')
