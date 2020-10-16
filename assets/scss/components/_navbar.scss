@@ -1,0 +1,152 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  margin-bottom: 6px;
+
+  // makes navbar always visible at the top
+  &.sticky,
+  &.elevate-on-scroll {
+    position: sticky;
+    top: 0;
+  }
+  &.elevate-on-scroll {
+    background: transparent;
+
+    // change navbar bg color on scroll
+    &.is-scrolled::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-contrast, rgb(112, 112, 112));
+      box-shadow: 0 1px rgba(#7b7b7b, .5);
+      opacity: .9;
+      z-index: -1;
+    }
+  }
+
+  // brand element in navbar
+  .brand {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .logo {
+      width: 36px;
+    }
+    .app-title {
+      margin-left: 5px;
+      text-decoration: none;
+      color: var(--secondary);
+      font-family: serif;
+    }
+  }
+
+  // container for navlinks in navbar
+  .nav-links {
+    display: flex;
+
+    &.right {
+      margin-left: auto;
+    }
+    &.center {
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+
+  .nav-link-list {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0 .5em;
+  }
+
+  // active-link underlining, normally invisible
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent, limegreen);
+    opacity: 0;
+  }
+  // make underline visible when route link active
+  .nav-link.nuxt-link-exact-active::after {
+    opacity: 1;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// ********************************************
+// common nav element styling
+.nav-link-list {
+  list-style: none;
+  
+  li {
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
+.nav-link {
+  cursor: pointer;
+  position: relative; // so you can use absolute in ::before pseudo
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--secondary, black);
+}
+
+// nav-link highliting, normally invisible
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--accent, limegreen);
+  opacity: 0;
+  z-index: -1;
+}
+// make highliting visible on hover and focus
+.nav-link:not(.nuxt-link-exact-active):hover::before,
+.nav-link:not(.nuxt-link-exact-active):focus::before {
+  opacity: .7;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: white;
+  z-index: 1;
+}
+
+.nav-link.nuxt-link-exact-active {
+  color: var(--accent, limegreen);
+}
+// .nav-link.nuxt-link-exact-active:focus::before {
+//   opacity: 0;
+// }

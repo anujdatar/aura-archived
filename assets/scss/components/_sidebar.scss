@@ -1,0 +1,79 @@
+// side navigation drawer styling
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 0;
+  z-index: 2;
+  transition: 500ms;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  &.is-open {
+    padding-left: 50%;
+    width: 100%;
+    right: 0;
+    overflow: hidden;
+  }
+
+  .side-nav-container {
+    background: var(--bg-contrast, white);
+    width: 100%;
+    height: 100%;
+  }
+
+  hr {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .brand {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: .2em;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  
+    .logo {
+      width: 36px;
+    }
+    .app-title {
+      margin-left: 5px;
+      text-decoration: none;
+      color: var(--secondary);
+      font-family: serif;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 52px);
+  }
+
+  .nav-link-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    li {
+      flex-grow: 1;
+    }
+  }
+
+  .nav-link {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

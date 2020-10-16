@@ -1,0 +1,33 @@
+// button element styling
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  padding: 1em 2em;
+  margin: .3rem;
+  border-radius: .35em;
+
+  background: var(--accent, limegreen);  
+  color: var(--text-color, white);
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 700;
+
+  &.pill {
+    border-radius: 100vw;
+  }
+
+  &.small {
+    padding: .4em 1.1em;
+  }
+}
+a.btn {
+  padding: 1.21em 2em;
+
+  &.small {
+    padding: .625em 1.1em;
+  }
+}
