@@ -1,7 +1,8 @@
 .navbar {
   display: flex;
+  align-items: center;
   width: 100%;
-  margin-bottom: 6px;
+  padding: 6px;
 
   // makes navbar always visible at the top
   &.sticky,
@@ -33,7 +34,7 @@
     font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
-    padding: .2em;
+    // padding: .2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +68,7 @@
   }
 
   .nav-link {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 700;
     padding: 0 .5em;
   }

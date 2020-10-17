@@ -56,7 +56,14 @@ li {
 
 .container {
   min-height: calc(100% - 56px - 50px);
-  // margin-bottom: auto;
+}
+
+.page-container {
+  padding: 0 1em;
+}
+p {
+  padding-bottom: 1em;
+  text-align: justify;
 }
 
 footer {
