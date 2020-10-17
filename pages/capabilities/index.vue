@@ -3,6 +3,9 @@
     <h1>
       CapabilitiesPage
     </h1>
+    <card color="red">
+      aaaaaa
+    </card>
   </div>
 </template>
 
