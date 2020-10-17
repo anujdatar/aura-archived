@@ -3,25 +3,27 @@
     <!--  -->
     <!-- top navigation bar start -->
     <header class="navbar elevate-on-scroll">
-      <nuxt-link to="/" tag="div" class="brand">
+      <nuxt-link to="/" class="brand">
         <img src="~/assets/images/aura_logo.png" class="logo" alt="aura-logo">
         <span class="app-title">{{ appTitle }}</span>
       </nuxt-link>
       <div class="nav-links right desktop">
-        <ul class="nav-links-list">
-          <nuxt-link
-            v-for="(item, i) in routes"
+        <ul class="nav-link-list">
+          <li
+            v-for="(route, i) in routes"
             :key="i"
-            :to="item.path"
-            tag="li"
-            tabindex="0"
-            class="nav-link"
           >
-            {{ item.title }}
-          </nuxt-link>
+            <nuxt-link
+              :to="route.path"
+              class="nav-link"
+              tabindex="0"
+            >
+              {{ route.title }}
+            </nuxt-link>
+          </li>
         </ul>
         <div class="cta">
-          <nuxt-link to="/contact" tag="button" class="btn pill small">
+          <nuxt-link to="/contact" class="btn pill small">
             Contact Us
           </nuxt-link>
         </div>
@@ -31,27 +33,29 @@
     <!-- top navigation bar end -->
     <!-- side nav start -->
     <aside class="side-nav mobile">
-      <div class="side-nav-links">
+      <div class="side-nav-container">
         <nuxt-link to="/" tag="div" class="brand">
           <img src="~/assets/images/aura_logo.png" class="logo" alt="aura-logo">
           <span class="app-title">{{ appTitle }}</span>
         </nuxt-link>
         <hr style="color: var(--secondary);width: 100%">
         <div class="nav-links">
-          <ul class="nav-links-list">
-            <nuxt-link
-              v-for="(item, i) in routes"
+          <ul class="nav-link-list">
+            <li
+              v-for="(route, i) in routes"
               :key="i"
-              :to="item.path"
-              tag="li"
-              tabindex="0"
-              class="nav-link"
             >
-              {{ item.title }}
-            </nuxt-link>
+              <nuxt-link
+                :to="route.path"
+                tabindex="0"
+                class="nav-link"
+              >
+                {{ route.title }}
+              </nuxt-link>
+            </li>
           </ul>
           <div class="cta">
-            <nuxt-link to="/contact" tag="button" class="btn pill">
+            <nuxt-link to="/contact" class="btn pill">
               Contact Us
             </nuxt-link>
           </div>
@@ -66,7 +70,9 @@
     <!--  -->
     <!-- footer start -->
     <footer>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span class="copyright">
+        Copyright 2006-2020 &copy; Aura Laserfab Pvt. Ltd.
+      </span>
     </footer>
     <!-- footer end -->
   </div>
@@ -109,14 +115,18 @@ export default {
   methods: {
     openSideNav () {
       const sidebar = window.document.querySelector('aside.side-nav')
+      const body = window.document.querySelector('body')
       sidebar.classList.add('is-open')
+      body.classList.add('no-scroll')
     },
     closeSideNav () {
       const sidebar = window.document.querySelector('aside.side-nav')
       const linkNodeList = window.document.querySelectorAll('aside.side-nav .nuxt-link-active')
       const linkArray = Array.prototype.slice.call(linkNodeList)
+      const body = window.document.querySelector('body')
       if ((event.target === sidebar) || (linkArray.includes(event.target))) {
         sidebar.classList.remove('is-open')
+        body.classList.remove('no-scroll')
       }
     },
     onScroll () {
